@@ -139,6 +139,7 @@ enum lru_list {
 	NR_LRU_LISTS
 };
 
+
 #define for_each_lru(l) for (l = 0; l < NR_LRU_LISTS; l++)
 
 #define for_each_evictable_lru(l) for (l = 0; l <= LRU_ACTIVE_FILE; l++)
@@ -157,6 +158,16 @@ static inline int is_unevictable_lru(enum lru_list l)
 {
 	return (l == LRU_UNEVICTABLE);
 }
+
+struct lruvec {
+	struct list_head lists[NR_LRU_LISTS];
+};
+
+/* Mask used at gathering information at once (see memcontrol.c) */
+#define LRU_ALL_FILE (BIT(LRU_INACTIVE_FILE) | BIT(LRU_ACTIVE_FILE))
+#define LRU_ALL_ANON (BIT(LRU_INACTIVE_ANON) | BIT(LRU_ACTIVE_ANON))
+#define LRU_ALL_EVICTABLE (LRU_ALL_FILE | LRU_ALL_ANON)
+#define LRU_ALL	     ((1 << NR_LRU_LISTS) - 1)
 
 /* Isolate inactive pages */
 #define ISOLATE_INACTIVE	((__force isolate_mode_t)0x1)
