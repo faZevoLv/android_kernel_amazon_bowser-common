@@ -883,7 +883,7 @@ static struct omap_board_mux board_mux[] __initdata = {
 #endif
 #if defined(CONFIG_TOUCHSCREEN_ATMEL_MXT)  || defined(CONFIG_TOUCHSCREEN_ATMEL_MXT_MODULE)
 	/* TOUCH IRQ - GPIO 24 */
-	OMAP4_MUX(DPM_EMU13, OMAP_MUX_MODE3 | OMAP_PIN_INPUT),
+	OMAP4_MUX(DPM_EMU13, OMAP_MUX_MODE3 | OMAP_PIN_INPUT | OMAP_WAKEUP_EN),
 #endif
 	{ .reg_offset = OMAP_MUX_TERMINATOR },
 
