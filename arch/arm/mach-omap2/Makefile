@@ -361,4 +361,3 @@ obj-$(CONFIG_ARCH_OMAP4)		+= omap_gcxxx.o
 obj-$(CONFIG_OMAP_RFKILL_STE_MODEM)	+= omap-rfkill-ste.o
 
 obj-$(CONFIG_RQ_STATS)			+= rq_stats.o
-obj-$(CONFIG_INTELLI_PLUG) 		+= intelli_plug.o
