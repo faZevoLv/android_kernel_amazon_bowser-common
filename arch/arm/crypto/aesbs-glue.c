@@ -244,7 +244,7 @@ static int aesbs_ctr_encrypt(struct blkcipher_desc *desc,
 		if (tdst != tsrc)
 			memcpy(tdst, tsrc, nbytes);
 		crypto_xor(tdst, ks, nbytes);
-		err = blkcipher_walk_done(desc, &walk, 0);
+		err = blkcipher_walk_done(desc, &walk, walk.nbytes % AES_BLOCK_SIZE);
 	}
 	return err;
 }
