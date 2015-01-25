@@ -59,4 +59,3 @@ obj-$(CONFIG_GCIOCTL)		+= gcx/gcioctl/
 obj-$(CONFIG_CACHE2DMANAGER)	+= cache-2dmanager/
 
 obj-$(CONFIG_COLOR_CONTROL)	+= color_control.o
-obj-$(CONFIG_CUSTOM_VOLTAGE)	+= custom_voltage.o
