@@ -57,7 +57,6 @@ obj-$(CONFIG_GCCORE)		+= gcx/gccore/
 obj-$(CONFIG_GCBV)		+= gcx/gcbv/
 obj-$(CONFIG_GCIOCTL)		+= gcx/gcioctl/
 obj-$(CONFIG_CACHE2DMANAGER)	+= cache-2dmanager/
-<<<<<<< HEAD
-=======
+
 obj-$(CONFIG_COLOR_CONTROL)	+= color_control.o
 obj-$(CONFIG_CUSTOM_VOLTAGE)	+= custom_voltage.o
