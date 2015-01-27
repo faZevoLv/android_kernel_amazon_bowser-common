@@ -2621,10 +2621,6 @@ bool skip_free_areas_node(unsigned int flags, int nid)
 		ret = !node_isset(nid, cpuset_current_mems_allowed);
 	} while (!put_mems_allowed(cpuset_mems_cookie));
 
-	get_mems_allowed();
-	ret = !node_isset(nid, cpuset_current_mems_allowed);
-	put_mems_allowed();
-
 out:
 	return ret;
 }
