@@ -15,10 +15,10 @@ obj-$(CONFIG_CPU_FREQ_GOV_SMARTASS)	+= cpufreq_smartass.o
 obj-$(CONFIG_CPU_FREQ_GOV_SCARY)	+= cpufreq_scary.o
 obj-$(CONFIG_CPU_FREQ_GOV_MINMAX)	+= cpufreq_minmax.o
 obj-$(CONFIG_CPU_FREQ_GOV_LAGFREE) 	+= cpufreq_lagfree.o
-obj-$(CONFIG_CPU_FREQ_GOV_SMOOTHASS) 	+= cpufreq_smoothass.o
-obj-$(CONFIG_CPU_FREQ_GOV_BRAZILIANWAX)	+= cpufreq_brazilianwax.o
-obj-$(CONFIG_CPU_FREQ_GOV_INTELLIDEMAND) += cpufreq_intellidemand.o
-obj-$(CONFIG_CPU_FREQ_GOV_VIRTUOUS)	+= cpufreq_virtuous.o
+# obj-$(CONFIG_CPU_FREQ_GOV_SMOOTHASS) 	+= cpufreq_smoothass.o
+# obj-$(CONFIG_CPU_FREQ_GOV_BRAZILIANWAX)	+= cpufreq_brazilianwax.o
+# obj-$(CONFIG_CPU_FREQ_GOV_INTELLIDEMAND) += cpufreq_intellidemand.o
+# obj-$(CONFIG_CPU_FREQ_GOV_VIRTUOUS)	+= cpufreq_virtuous.o
 
 obj-$(CONFIG_CPU_FREQ_GOV_SCREEN)	+= cpufreq_screen.o
 
