@@ -371,27 +371,6 @@ config CPU_FREQ_GOV_MINMAX
 
 	  If in doubt, say N.
 
-config CPU_FREQ_GOV_INTERACTIVEX
-	tristate "'interactiveX' cpufreq policy governor"
-	help
-	  'interactiveX' - Modified version of interactive with sleep+wake code.
-
-config CPU_FREQ_GOV_SAVAGEDZEN
-	tristate "'savagedzen' cpufreq governor"
-	depends on CPU_FREQ
-	help
-	  'Savaged-Zen' - a "smartass" based governor
-
-	  If in doubt, say N.
-
-config CPU_FREQ_GOV_SMARTASS2
-	tristate "'smartassV2' cpufreq governor"
-	depends on CPU_FREQ
-	help
-	  'smartassV2' - a "smart" optimized governor for the hero!
-
-	  If in doubt, say N.
-
 config CPU_FREQ_GOV_SMOOTHASS
 	tristate "'smoothass' cpufreq governor"
 	depends on CPU_FREQ
