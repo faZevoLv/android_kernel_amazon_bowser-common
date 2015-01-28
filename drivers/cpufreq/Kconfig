@@ -203,6 +203,7 @@ config CPU_FREQ_DEFAULT_GOV_VIRTUOUS
         select CPU_FREQ_GOV_VIRTUOUS
         help
           Use the CPUFreq governor 'virtuous' as default.
+endchoice
 
 config CPU_FREQ_GOV_PERFORMANCE
 	tristate "'performance' governor"
