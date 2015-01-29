@@ -393,7 +393,6 @@ KBUILD_CFLAGS   := -O3 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -Wno-error=unused-but-set-variable \
 		   -Wno-error=maybe-uninitialized \
 		   -march=armv7-a \
-		   -mcpu=cortex-a9 \
 		   -mtune=cortex-a9 \
 		   -mfpu=neon \
 		   -flto -fno-toplevel-reorder -fuse-linker-plugin \
