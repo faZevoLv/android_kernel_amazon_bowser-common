@@ -249,7 +249,7 @@ HOSTCXX      = g++
 HOSTCFLAGS   = -Wall -Wmissing-prototypes -Wstrict-prototypes -O2 -fomit-frame-pointer
 HOSTCXXFLAGS = -O2
 HOSTCC       = $(CCACHE) gcc
-+HOSTCXX      = $(CCACHE) g++
+HOSTCXX      = $(CCACHE) g++
 
 # Decide whether to build built-in, modular, or both.
 # Normally, just do built-in.
@@ -367,14 +367,39 @@ LINUXINCLUDE    := -I$(srctree)/arch/$(hdr-arch)/include \
 
 KBUILD_CPPFLAGS := -D__KERNEL__
 
-KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
-		   -fno-strict-aliasing -fno-common \
-		   -Werror-implicit-function-declaration \
-		   -Wno-format-security \
-                   -fmodulo-sched -fmodulo-sched-allow-regmoves \
-		   -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 \
-                   -funswitch-loops -fpredictive-commoning -fgcse-after-reload \
-		   -fno-delete-null-pointer-checks
+KBUILD_CFLAGS   := -O3 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+ 		   -Werror-implicit-function-declaration \
+ 		   -Wno-format-security \
+ 		   -fno-delete-null-pointer-checks \
+		   -DNDEBUG -funsafe-loop-optimizations \
+		   -fsection-anchors \
+		   -fivopts \
+		   -ftree-loop-im \
+		   -ftree-loop-ivcanon \
+		   -ffunction-sections \
+		   -fdata-sections \
+		   -funswitch-loops \
+		   -frename-registers \
+		   -frerun-cse-after-loop \
+		   -fomit-frame-pointer \
+		   -fgcse-after-reload \
+		   -fgcse-sm \
+		   -fgcse-las \
+		   -fweb \
+		   -ftracer \
+		   -fstrict-aliasing \
+		   -Wno-error=strict-aliasing \
+		   -Wno-error=unused-parameter \
+		   -Wno-error=unused-but-set-variable \
+		   -Wno-error=maybe-uninitialized \
+		   -march=armv7-a \
+		   -mcpu=cortex-a9 \
+		   -mtune=cortex-a9 \
+		   -mfpu=neon \
+		   -flto -fno-toplevel-reorder -fuse-linker-plugin \
+		   -floop-parallelize-all -ftree-loop-linear -floop-interchange \
+		   -floop-strip-mine -floop-block
+
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
@@ -564,11 +589,7 @@ endif # $(dot-config)
 # Defaults to vmlinux, but the arch makefile usually adds further targets
 all: vmlinux
 
-ifdef CONFIG_CC_OPTIMIZE_FOR_SIZE
-KBUILD_CFLAGS	+= -Os -Wno-address $(call cc-disable-warning,maybe-uninitialized,)
-else
 KBUILD_CFLAGS	+= -O2 -Wno-address $(call cc-disable-warning,maybe-uninitialized,)
-endif
 
 include $(srctree)/arch/$(SRCARCH)/Makefile
 
