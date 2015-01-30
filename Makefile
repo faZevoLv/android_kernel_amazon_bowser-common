@@ -395,7 +395,7 @@ KBUILD_CFLAGS   := -O3 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -march=armv7-a \
 		   -mtune=cortex-a9 \
 		   -mfpu=neon \
-		   -flto -fno-toplevel-reorder -fuse-linker-plugin \
+		   -flto -fuse-linker-plugin \
 		   -floop-parallelize-all -ftree-loop-linear -floop-interchange \
 		   -floop-strip-mine -floop-block
 
