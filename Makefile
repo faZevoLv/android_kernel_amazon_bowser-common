@@ -387,8 +387,7 @@ KBUILD_CFLAGS   := -O3 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
 		   -fgcse-las \
 		   -fweb \
 		   -ftracer \
-		   -fstrict-aliasing \
-		   -Wno-error=strict-aliasing \
+		   -fno-strict-aliasing \
 		   -Wno-error=unused-parameter \
 		   -Wno-error=unused-but-set-variable \
 		   -Wno-error=maybe-uninitialized \
