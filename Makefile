@@ -367,37 +367,17 @@ LINUXINCLUDE    := -I$(srctree)/arch/$(hdr-arch)/include \
 
 KBUILD_CPPFLAGS := -D__KERNEL__
 
-KBUILD_CFLAGS   := -O3 -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
- 		   -Werror-implicit-function-declaration \
- 		   -Wno-format-security \
- 		   -fno-delete-null-pointer-checks \
-		   -DNDEBUG -funsafe-loop-optimizations \
-		   -fsection-anchors \
-		   -fivopts \
-		   -ftree-loop-im \
-		   -ftree-loop-ivcanon \
-		   -ffunction-sections \
-		   -fdata-sections \
-		   -funswitch-loops \
-		   -frename-registers \
-		   -frerun-cse-after-loop \
-		   -fomit-frame-pointer \
-		   -fgcse-after-reload \
-		   -fgcse-sm \
-		   -fgcse-las \
-		   -fweb \
-		   -ftracer \
-		   -fno-strict-aliasing \
-		   -Wno-error=unused-parameter \
-		   -Wno-error=unused-but-set-variable \
-		   -Wno-error=maybe-uninitialized \
-		   -march=armv7-a \
-		   -mtune=cortex-a9 \
-		   -mfpu=neon \
+KBUILD_CFLAGS   := -Wall -Wundef -Wstrict-prototypes -Wno-trigraphs \
+		   -fno-strict-aliasing -fno-common \
+		   -Werror-implicit-function-declaration \
+		   -Wno-format-security \
+                   -fmodulo-sched -fmodulo-sched-allow-regmoves \
+		   -march=armv7-a -mcpu=cortex-a9 -mtune=cortex-a9 \
+                   -funswitch-loops -fpredictive-commoning -fgcse-after-reload \
+		   -fno-delete-null-pointer-checks \
 		   -flto -fuse-linker-plugin \
 		   -floop-parallelize-all -ftree-loop-linear -floop-interchange \
-		   -floop-strip-mine -floop-block
-
+		   -floop-strip-mine -floop-block 
 KBUILD_AFLAGS_KERNEL :=
 KBUILD_CFLAGS_KERNEL :=
 KBUILD_AFLAGS   := -D__ASSEMBLY__
