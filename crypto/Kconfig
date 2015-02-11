@@ -651,7 +651,6 @@ config CRYPTO_ABLK_HELPER
 	tristate
 	select CRYPTO_CRYPTD
 
-
 config CRYPTO_ANUBIS
 	tristate "Anubis cipher algorithm"
 	select CRYPTO_ALGAPI
