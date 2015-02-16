@@ -35,6 +35,8 @@
 
 #include "zram_drv.h"
 
+#define ZRAM_COMPRESSOR_DEFAULT "snappy"
+
 #if defined(CONFIG_ZRAM_LZO)
 #include <linux/lzo.h>
 #define WMSIZE		LZO1X_MEM_COMPRESS
