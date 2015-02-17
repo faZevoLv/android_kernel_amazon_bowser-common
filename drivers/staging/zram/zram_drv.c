@@ -36,7 +36,7 @@
 
 #include "zram_drv.h"
 
-#define ZRAM_COMPRESSOR_DEFAULT "snappy"
+#define ZRAM_COMPRESSOR_DEFAULT "lzo"
 
 #if defined(CONFIG_ZRAM_LZO)
 #include <linux/lzo.h>
